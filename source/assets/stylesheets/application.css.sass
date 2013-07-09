@@ -2,8 +2,181 @@
 @import 'variables'
 @import 'bootstrap'
 @import 'bootstrap-responsive'
-@import 'flat-ui'
+@import 'flat-ui/flat-ui'
+
+a
+  text-decoration: none
+
+//LOGIN PAGE
+body.index
+  background: #454545
+
+.navbar
+  & .navbar-inner
+    height: 61px
+    background: #cc6055
+    border-top: 2px solid #cf756c
+    border-bottom: 2px solid #81413c
+    +border-radius (0px)
+
+  & .brand
+    padding: 15px
+    color: #fff
+    font-weight: 400
+    &:hover
+      color: #424242
+
+.current-user
+  padding: 15px 0
+
+.launch-pad-container
+  margin-top: 50px
+
+.launch-pad-search-form
+  width: 100%
+  text-align: center
+
+  & .input-append .search-query
+    min-height: 23px
+    background: #2d2d2d
+    border-left: none
+    border-right: none
+    border-top: 2px solid #2c2c2c
+    border-bottom: 1px solid #575859
+    color: #bfc9ca
+    +text-shadow (1px 1px 1px #515454)
+    &:focus
+      color: #48c9b0
+      +text-shadow (none)
+
+  & .btn
+    line-height: 20px
+    background: #2d2d2d
+    border-top: 2px solid #2c2c2c
+    border-bottom: 1px solid #575859
+    +border-radius (14px)
+    &:hover
+      @extend .btn
+      & > .icon-search
+        color: #c95f54
+    &:focus
+      @extend .btn
+      & > .icon-search
+        color: #c95f54
+
+.input-append .launch-pad-search-form .btn:hover,
+.launch-pad-search-form .input-append .btn:hover,
+.input-append .launch-pad-search-form .btn:focus,
+.launch-pad-search-form .input-append .btn:focus
+  +border-top-right-radius (14px)
+  +border-bottom-right-radius (14px)
+
+.launch-pad
+  letter-spacing: 72px
+  vertical-align: middle
+  margin-top: 50px
+
+  & [class^="icon-"]
+    color: #fff
+    font-size: 120px
+
+.launch-pad-icon
+  float: none
+  display: inline-block
+  letter-spacing: normal
+  margin: 0 0 50px 0
+  &:after
+    content: ''
+    position: absolute
+    float: right
+    width: 171px
+    height: 169px
+    border: 4px solid #87514c
+    border-top: 4px solid transparent
+    border-bottom: 4px solid #87514c
+    border-left: 4px solid transparent
+    border-radius: 50%
+    margin: -16px 0 0 -185px
+    padding: 10px
+  &:hover:after
+    border: 4px solid #fff
+    +transition (.25s)
+
+.launch-pad-icon-circle
+  float: left
+  width: 100%
+  padding: 12.3% 0
+  background: #343434
+  text-align: center
+  +border-radius (50%)
+  border-top: 1px solid #2f2f2f
+  border-bottom: 1px solid #6b6b6b
+
+@media screen and (max-width:1024px)
+  .launch-pad-icon-circle
+    padding: 2.4% 0
+    & .icon-group
+      font-size: 90px
+
+.launch-pad-icon-title
+  float: left
+  width: 100%
+  margin-top: 20px
+  font-size: 15px
+  color: #fff
+  white-space: nowrap
+  text-overflow: ellipsis
+  text-align: center
+  &:hover
+    color: #fff
+
+.footer
+  margin-top: 40px
+
+.foot-page
+  text-align: left
+
+.foot-page ul
+  margin-left: 0
+  & li
+    float: left
+    list-style: none
+    margin-right: 10px
+    & a
+      color: #bcc0c9
+      font-weight: 300
+      font-size: 12px
+      &:hover
+        color: #c75d53
+
+.beaker
+  text-align: center
+
+.beaker
+  & .icon-beaker
+    color: #fff
+    font-size: 20px
+    &:hover
+      color: #c75d53
+
+.copyright
+  text-align: right
+  color: #bcc0c9
+  font-weight: 300
+  font-size: 12px
 
 
-body, html
-  font-family: 'Open Sans', sans-serif
+
+
+
+
+
+
+
+
+
+
+
+
+
+

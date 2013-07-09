@@ -1,6 +1,89 @@
-- @title = '## HIERAPOLIS ##'
+- @title = '∞ HIERAPOLIS ∞'
 - @body_class = 'index'
 
-Hierapolis Rocks!
-%a.btn.btn-large{:href => "#"}
-  %i.icon-rocket.icon-5x
+.row-fluid
+  .span12
+    .navbar
+      .navbar-inner
+        %a.brand{href: ''} HIERAPOLIS
+
+//Launch Pad
+.container.launch-pad-container
+  .row
+    .span12
+      //Search Form
+      %form.launch-pad-search-form.form-search.form-horizontal
+        .input-append
+          %input.search-query{placeholder: 'search...', type: 'text'}/
+          %button.btn{type: 'submit'}
+            %i.icon-search
+
+  //Launch Pad Icon Set
+  .row
+    .span12.launch-pad
+
+      .span2.launch-pad-icon
+        %a.launch-pad-icon-circle{href: '#'}
+          %i.icon-group
+        %a.launch-pad-icon-title{href: '#'}  User Management
+
+      .span2.launch-pad-icon
+        %a.launch-pad-icon-circle{href: '#'}
+          %i.icon-comments
+        %a.launch-pad-icon-title{href: '#'}  Messages
+
+      .span2.launch-pad-icon
+        %a.launch-pad-icon-circle{href: '#'}
+          %i.icon-cog
+        %a.launch-pad-icon-title{href: '#'}  Settings
+
+      .span2.launch-pad-icon
+        %a.launch-pad-icon-circle{href: '#'}
+          %i.icon-folder-open
+        %a.launch-pad-icon-title{href: '#'}  File Management
+
+      .span2.launch-pad-icon
+        %a.launch-pad-icon-circle{href: '#'}
+          %i.icon-picture
+        %a.launch-pad-icon-title{href: '#'}  Image Store
+
+      .span2.launch-pad-icon
+        %a.launch-pad-icon-circle{href: '#'}
+          %i.icon-rocket
+        %a.launch-pad-icon-title{href: '#'}  Applications
+
+      .span2.launch-pad-icon
+        %a.launch-pad-icon-circle{href: '#'}
+          %i.icon-code
+        %a.launch-pad-icon-title{href: '#'}  Content Management
+
+      .span2.launch-pad-icon
+        %a.launch-pad-icon-circle{href: '#'}
+          %i.icon-bar-chart
+        %a.launch-pad-icon-title{href: '#'}  Dashboard
+
+      .span2.launch-pad-icon
+        %a.launch-pad-icon-circle{href: '#'}
+          %i.icon-camera
+        %a.launch-pad-icon-title{href: '#'}  Gallery
+
+      .span2.launch-pad-icon
+        %a.launch-pad-icon-circle{href: '#'}
+          %i.icon-cloud
+        %a.launch-pad-icon-title{href: '#'}  Cloud
+
+  //Footer
+  .row
+    .span12.footer
+      .row
+        .span4.foot-page
+          %ul
+            %li
+              %a{href: '#'} Privacy Policy
+            %li
+              %a{href: '#'} Help
+        .span4.beaker
+          %a{href: 'http//www.lab2023.com'}
+            %i.icon-beaker
+        .span4.copyright
+          %p Copyright © 2013 Lab20023 Inc. All rights reserved.

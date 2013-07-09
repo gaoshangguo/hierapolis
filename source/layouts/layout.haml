@@ -20,21 +20,21 @@
     %link(rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/images/apple-touch-icon-72x72-precomposed.png")
     %link(rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/images/apple-touch-icon-114x114-precomposed.png")
 
-    / Stylesheets (Don't change include order)
+    / Stylesheets (Please don't change include order)
     = stylesheet_link_tag 'application',
                           '//netdna.bootstrapcdn.com/font-awesome/3.2.0/css/font-awesome.min.css'
     = yield_content :head
 
   %body{class: @body_class || 'page'}
-    .container{ role: 'main' }
-      = yield
+    = yield
 
-    / Javascripts
-    = javascript_include_tag '//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js',
-                             '//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js',
-                             '//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js',
-                             'application'
 
-    / Google Analytics
-    = partial 'partials/trackers'
+    %footer
+      / Javascripts
+      = javascript_include_tag '//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js',
+                               '//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js',
+                               '//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js',
+                               'application'
+      / Google Analytics
+      = partial 'partials/trackers'
 
