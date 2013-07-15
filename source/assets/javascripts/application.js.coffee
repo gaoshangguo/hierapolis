@@ -8,9 +8,9 @@
 #//= require vendor/html5shiv
 #//= require vendor/bootstrap-switch
 #//= require vendor/bootstrap-select
-#//= require flat-ui/flat-ui
-#//= require flat-ui/flatui-checkbox
-#//= require flat-ui/flatui-radio
+#//= require flat-ui
+#//= require flatui-checkbox
+#//= require flatui-radio
 
 
 
