@@ -1,14 +1,41 @@
-- @title = '∞ HIERAPOLIS ∞'
+- @title = 'HIERAPOLIS'
 - @body_class = 'index'
 
-.row-fluid
-  .span12
-    .navbar
-      .navbar-inner
-        %a.brand{href: ''} HIERAPOLIS
+
+.navbar.navbar-inverse.blur-effect
+  .navbar-inner
+    .container-fluid
+      %button.btn.btn-navbar{'data-target' => '.nav-collapse', 'data-toggle' => 'collapse', :type => 'button'}
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      %a.brand{:href => '#'} HIERAPOLIS
+      .nav-collapse.collapse
+        .pull-right
+          %ul.nav.pull-right
+            %li.current-user-name
+              John DOE
+            %li.dropdown.current-user-dropdown
+              %a.dropdown-toggle{'data-toggle' => 'dropdown', :href => '#'}
+                %img.img-circle{alt:'', src:'http://placehold.it/40x40&text=User'}
+              %ul.dropdown-menu
+                %li
+                  %a{:href => '/user/preferences'}
+                    %i.icon-cog
+                    Preferences
+                %li
+                  %a{:href => '/help/support'}
+                    %i.icon-envelope
+                    Contact Support
+                %li.divider
+                %li
+                  %a{:href => '/auth/logout'}
+                    %i.icon-off
+                    Logout
+
 
 //Launch Pad
-.container.launch-pad-container
+.container.launch-pad-container.blur-effect
   .row
     .span12
       //Search Form
@@ -72,7 +99,8 @@
           %i.icon-cloud
         %a.launch-pad-icon-title{href: '#'}  Cloud
 
-  //Footer
+//Footer
+.container
   .row
     .span12.footer
       .row

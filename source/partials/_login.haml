@@ -1,0 +1,34 @@
+.conatiner.login-container
+  %form#login-modal.modal{action:'', tabindex: '-1', role:'dialog', 'aria-labelledby'=>'myModalLabel', 'aria-hidden'=>'true'}
+    .login-form
+      .control-group
+        #port.login-brand
+          %img.img-circle.parallax-layer{alt:'', src:'http://placehold.it/157x157&text=LOGO'}
+      .control-group
+        %input#login-name.login-field{placeholder: 'Username', type: 'text', value: ''}/
+        %label.login-field-icon.icon-user{for: 'login-name'}
+      .control-group
+        %input#login-pass.login-field{placeholder: 'Password', type: 'password', value: ''}/
+        %label.login-field-icon.icon-lock{for: 'login-pass'}
+      %a.btn.btn-primary.btn-large.btn-block.btn-submit{href: '#'} Login
+      .login-footer
+        .pull-left
+          %label.checkbox.checked{for: 'checkbox'}
+            %span.icons
+              %span.first-icon.icon-check-empty
+              %span.second-icon.icon-check-sign
+            %input#checkbox{checked: 'checked', 'data-toggle' => 'checkbox', type: 'checkbox', value:''}/
+            Remember Me
+        %a.pull-right.forget-pass.transform-flip{href: '#'} Forget Password?
+
+  %form#login-modal-recover.modal{action:'', tabindex: '-1', role:'dialog', 'aria-labelledby'=>'myModalLabel', 'aria-hidden'=>'true'}
+    .login-form
+      .control-group
+        #port.login-brand
+          %img.img-circle.parallax-layer{alt:'', src:'http://placehold.it/157x157&text=LOGO'}
+      .control-group
+        %input#login-pass.login-field{placeholder: 'User e-mail', type: 'text', value: ''}/
+        %label.login-field-icon.icon-envelope{for: 'recover-pass'}
+      %a.btn.btn-primary.btn-large.btn-block.btn-submit{href: '#'} Submit
+      .login-footer
+        %a.pull-right.forget-pass.transform-flip{href: '#'} &#171; Back to login

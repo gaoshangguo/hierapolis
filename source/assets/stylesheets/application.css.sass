@@ -4,30 +4,34 @@
 @import 'bootstrap-responsive'
 @import 'flat-ui/flat-ui'
 
+// Base Elements
+body
+  background: #454545
 a
   text-decoration: none
 
 //LOGIN PAGE
 body.index
-  background: #454545
+  overflow: scroll
 
 .navbar
   & .navbar-inner
     height: 61px
     background: #cc6055
-    border-top: 2px solid #cf756c
-    border-bottom: 2px solid #81413c
-    +border-radius (0px)
+    border:
+      top: 2px solid #cf756c
+      bottom: 2px solid #81413c
+    +border-radius(0px)
 
   & .brand
-    padding: 15px
+    padding: 15px 0
     color: #fff
     font-weight: 400
+    border:
+      bottom: 0
+      right: 0
     &:hover
       color: #424242
-
-.current-user
-  padding: 15px 0
 
 .launch-pad-container
   margin-top: 50px
@@ -39,44 +43,57 @@ body.index
   & .input-append .search-query
     min-height: 23px
     background: #2d2d2d
-    border-left: none
-    border-right: none
-    border-top: 2px solid #2c2c2c
-    border-bottom: 1px solid #575859
+    border:
+      top: 2px solid #2c2c2c
+      right: none
+      bottom: 1px solid #575859
+      left: none
     color: #bfc9ca
-    +text-shadow (1px 1px 1px #515454)
+    +text-shadow(1px 1px 1px #515454)
     &:focus
       color: #48c9b0
-      +text-shadow (none)
+      +text-shadow(none)
 
   & .btn
     line-height: 20px
     background: #2d2d2d
-    border-top: 2px solid #2c2c2c
-    border-bottom: 1px solid #575859
-    +border-radius (14px)
+    border:
+      top: 2px solid #2c2c2c
+      bottom: 1px solid #575859
+    +border-radius(14px)
     &:hover
       @extend .btn
-      & > .icon-search
+      & .icon-search
         color: #c95f54
     &:focus
       @extend .btn
-      & > .icon-search
+      & .icon-search
         color: #c95f54
 
+// TODO: Simplify it! (Flat UI fix bug for hierapolis)
 .input-append .launch-pad-search-form .btn:hover,
 .launch-pad-search-form .input-append .btn:hover,
 .input-append .launch-pad-search-form .btn:focus,
 .launch-pad-search-form .input-append .btn:focus
-  +border-top-right-radius (14px)
-  +border-bottom-right-radius (14px)
+  +border-top-right-radius(14px)
+  +border-bottom-right-radius(14px)
+
+.navbar-inverse .nav > li > a
+  border:
+    bottom: 0
+    left: 0
+  padding: 0
+.navbar .nav > li > a
+  padding: 0
+.navbar.navbar-inverse .nav li.dropdown.open > .dropdown-toggle
+  background: none
 
 .launch-pad
   letter-spacing: 72px
   vertical-align: middle
   margin-top: 50px
 
-  & [class^="icon-"]
+  & [class^='icon-']
     color: #fff
     font-size: 120px
 
@@ -92,15 +109,22 @@ body.index
     width: 171px
     height: 169px
     border: 4px solid #87514c
-    border-top: 4px solid transparent
-    border-bottom: 4px solid #87514c
-    border-left: 4px solid transparent
-    border-radius: 50%
+      top: 4px solid transparent
+      bottom: 4px solid #87514c
+      left: 4px solid transparent
+    +border-radius(50%)
     margin: -16px 0 0 -185px
     padding: 10px
+    +transition(.25s)
   &:hover:after
-    border: 4px solid #fff
-    +transition (.25s)
+    +transform(rotate(-180deg))
+    border: 4px solid #CC6055
+      top: 4px solid transparent
+      bottom: 4px solid #CC6055
+      left: 4px solid transparent
+    +transition(.25s)
+  &:hover [class^='icon-']
+    color: #cc6055
 
 .launch-pad-icon-circle
   float: left
@@ -108,9 +132,10 @@ body.index
   padding: 12.3% 0
   background: #343434
   text-align: center
-  +border-radius (50%)
-  border-top: 1px solid #2f2f2f
-  border-bottom: 1px solid #6b6b6b
+  +border-radius(50%)
+  border:
+    top: 1px solid #2f2f2f
+    bottom: 1px solid #6b6b6b
 
 @media screen and (max-width:1024px)
   .launch-pad-icon-circle
@@ -125,10 +150,11 @@ body.index
   font-size: 15px
   color: #fff
   white-space: nowrap
-  text-overflow: ellipsis
-  text-align: center
+  text:
+    overflow: ellipsis
+    align: center
   &:hover
-    color: #fff
+    color: #CC6055
 
 .footer
   margin-top: 40px
@@ -144,8 +170,9 @@ body.index
     margin-right: 10px
     & a
       color: #bcc0c9
-      font-weight: 300
-      font-size: 12px
+      font:
+        weight: 300
+        size: 12px
       &:hover
         color: #c75d53
 
@@ -165,18 +192,71 @@ body.index
   font-weight: 300
   font-size: 12px
 
+//LOGIN FORM
+.login-container
+  position: absolute
+  left: 60%
+  top: 25%
+  width: 371px
+  margin: -124px 0 0 -120px
+  text-align: center
+  +perspective(500px)
 
+  & .modal
+    border: none
+    margin-left: none
 
+%login-modal-parent
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
 
+#login-modal
+  @extend %login-modal-parent
+  +transform-style(preserve-3d)
+  +backface-visibility(hidden)
+  +transition(0.8s)
+  z-index: 2
 
+#login-modal-recover
+  @extend %login-modal-parent
+  z-index: 1
 
+.flipped #login-modal
+  +transform(rotateY(180deg))
 
+.flipped #login-modal-recover
+  +transform(rotate(0deg))
 
+.login-brand
+  text-align: center
+  margin-bottom: 40px
+  &:after
+    content: ''
+    position: absolute
+    display: inline-block
+    width: 157px
+    height: 25px
+    margin: 163px 0 0 -160px
+    background: 100% 50% #DFE4E5
+    border-radius: 50%
+  & img
+    position: relative
+    width: 157px
+    height: 157px
 
+.login-footer
+  display: inline-block
+  width: 100%
+  margin: 8px 0
 
+.btn-submit
+  border-bottom: 3px solid #16a085
 
-
-
-
-
-
+.current-user-name
+  padding: 20px 0
+  color: #fff
+.current-user-dropdown
+  padding: 10px 0

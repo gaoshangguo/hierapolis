@@ -8,7 +8,7 @@
   -o-animation: $properties
   animation: $properties
 
-//border-radius removed, because we r use compass (http://compass-style.org/reference/compass/css3/border_radius)
+//border-radius has been removed, because we r use compass (http://compass-style.org/reference/compass/css3/border_radius)
 //=border-radius($radius)
 //  -webkit-border-radius: $radius
 //  -moz-border-radius: $radius
@@ -69,19 +69,21 @@
   &.placeholder
     color: $color
 
-=transition($properties)
-  -webkit-transition: $properties
-  -moz-transition: $properties
-  -o-transition: $properties
-  transition: $properties
-  -webkit-backface-visibility: hidden
+//transition has been removed, because we r use compass (http://compass-style.org/reference/compass/css3/transition)
+//=transition($properties)
+//  -webkit-transition: $properties
+//  -moz-transition: $properties
+//  -o-transition: $properties
+//  transition: $properties
+//  -webkit-backface-visibility: hidden
 
-=transform($properties)
-  -webkit-transform: $properties
-  -moz-transform: $properties
-  -ms-transform: $properties
-  -o-transform: $properties
-  transform: $properties
+//transform has been removed, because we r use compass (http://compass-style.org/reference/compass/css3/transform)
+//=transform($properties)
+//  -webkit-transform: $properties
+//  -moz-transform: $properties
+//  -ms-transform: $properties
+//  -o-transform: $properties
+//  transform: $properties
 
 =vertical-gradient($from, $to)
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, $from), color-stop(100%, $to))
